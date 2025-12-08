@@ -70,7 +70,6 @@
             label.Size = new Size(291, 23);
             label.TabIndex = 0;
             label.Text = "Вычислить выражение по формуле";
-            label.Click += label1_Click;
             // 
             // labelUslovie_ARI
             // 
@@ -123,7 +122,6 @@
             textBoxPositionWinX_ARI.Name = "textBoxPositionWinX_ARI";
             textBoxPositionWinX_ARI.Size = new Size(125, 27);
             textBoxPositionWinX_ARI.TabIndex = 7;
-            textBoxPositionWinX_ARI.TextChanged += textBox1_TextChanged;
             // 
             // textBoxResultat_ARI
             // 
@@ -141,7 +139,6 @@
             buttonStart_ARI.TabIndex = 9;
             buttonStart_ARI.Text = "Выполнить";
             buttonStart_ARI.UseVisualStyleBackColor = true;
-            buttonStart_ARI.Click += button1_Click;
             // 
             // buttonVopros_ARI
             // 
@@ -160,6 +157,7 @@
             pictureBoxFormula_ARI.Size = new Size(243, 121);
             pictureBoxFormula_ARI.TabIndex = 11;
             pictureBoxFormula_ARI.TabStop = false;
+            pictureBoxFormula_ARI.Click += pictureBoxFormula_ARI_Click;
             // 
             // Form1
             // 
@@ -180,7 +178,6 @@
             Controls.Add(flowLayoutPanel1);
             Name = "Form1";
             Text = "Спринт 6| Таск 0 | Вариант 30 | Атанаев Р.И.";
-            Load += Form1_Load;
             panelUslovie_ARI.ResumeLayout(false);
             panelUslovie_ARI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxFormula_ARI).EndInit();
