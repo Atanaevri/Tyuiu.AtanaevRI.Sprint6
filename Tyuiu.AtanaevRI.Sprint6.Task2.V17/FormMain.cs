@@ -6,7 +6,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task2.V17
         public FormMain()
         {
             InitializeComponent();
-           
+
         }
         DataService ds = new DataService();
         private void buttonStart_ARI_Click(object sender, EventArgs e)
@@ -30,6 +30,11 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task2.V17
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSpravka_ARI_Click(object sender, EventArgs e)
         {
 
         }

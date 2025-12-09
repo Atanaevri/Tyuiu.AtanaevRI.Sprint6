@@ -157,7 +157,7 @@
             pictureBoxFormula_ARI.Size = new Size(243, 121);
             pictureBoxFormula_ARI.TabIndex = 11;
             pictureBoxFormula_ARI.TabStop = false;
-            pictureBoxFormula_ARI.Click += pictureBoxFormula_ARI_Click;
+        
             // 
             // Form1
             // 

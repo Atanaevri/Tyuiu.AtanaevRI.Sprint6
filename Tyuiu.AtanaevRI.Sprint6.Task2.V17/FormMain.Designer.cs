@@ -106,6 +106,7 @@
             labelSpravka_ARI.Size = new Size(67, 20);
             labelSpravka_ARI.TabIndex = 6;
             labelSpravka_ARI.Text = "Справка";
+            labelSpravka_ARI.Click += labelSpravka_ARI_Click;
             // 
             // labelUslovie2_ARI
             // 

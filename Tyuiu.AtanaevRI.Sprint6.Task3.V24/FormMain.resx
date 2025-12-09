@@ -117,16 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="X.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnFx_ARI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>207, 17</value>
-  </metadata>
+  <data name="labelUslovie2_ARI.Text" xml:space="preserve">
+    <value>Дан массив 5 на 5 элементов.
+Заменить четные значения во второй строке на 0.
+
+Результат вывести в DataGridView.
+
+-17  -6  10   5   3
+
+ -10 -14  10  -7  -3
+
+ -19   9   8 -17  -9
+
+ -19  -5  -9 -18  14
+
+  17  12  11  12   2</value>
+  </data>
 </root>
