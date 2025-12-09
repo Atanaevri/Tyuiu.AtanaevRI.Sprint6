@@ -9,8 +9,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         public FormMain()
         {
             InitializeComponent();
-            InitializeDataGridView(); // Инициализируем DataGridView
-            LoadOriginalMatrix(); // Загружаем исходные данные
+            InitializeDataGridView(); 
         }
 
         DataService ds = new DataService();
@@ -27,28 +26,26 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         {
             try
             {
-                // Очищаем существующие столбцы
+             
                 dataGridViewRes_ARI.Columns.Clear();
                 dataGridViewRes_ARI.Rows.Clear();
 
-                // Создаем 5 столбцов
+             
                 for (int i = 0; i < 5; i++)
                 {
                     dataGridViewRes_ARI.Columns.Add($"Column{i}", $"Столбец {i + 1}");
                     dataGridViewRes_ARI.Columns[i].Width = 60;
                 }
 
-                // Создаем 5 строк
                 dataGridViewRes_ARI.RowCount = 5;
 
-                // Настраиваем внешний вид
                 dataGridViewRes_ARI.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                 dataGridViewRes_ARI.ReadOnly = true;
                 dataGridViewRes_ARI.AllowUserToAddRows = false;
                 dataGridViewRes_ARI.AllowUserToResizeRows = false;
                 dataGridViewRes_ARI.AllowUserToResizeColumns = false;
 
-                // Центрируем текст
+              
                 dataGridViewRes_ARI.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridViewRes_ARI.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
@@ -75,7 +72,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                     }
                 }
 
-                // Снимаем выделение
+                
                 dataGridViewRes_ARI.ClearSelection();
             }
             catch (Exception ex)
@@ -89,10 +86,9 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         {
             try
             {
-                // Вычисляем результат
+              
                 int[,] resultMatrix = ds.Calculate(matrix);
 
-                // Отображаем результат в DataGridView
                 for (int i = 0; i < 5; i++)
                 {
                     for (int j = 0; j < 5; j++)
@@ -105,7 +101,6 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                     }
                 }
 
-                // Подсвечиваем вторую строку (индекс 1) - только если она существует
                 if (dataGridViewRes_ARI.Rows.Count > 1)
                 {
                     for (int j = 0; j < 5; j++)
@@ -117,7 +112,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                     }
                 }
 
-                // Снимаем выделение
+    
                 dataGridViewRes_ARI.ClearSelection();
             }
             catch (Exception ex)
@@ -135,7 +130,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
 
         private void dataGridViewRes_ARI_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Пустой обработчик события
+            
         }
     }
 }
