@@ -19,7 +19,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task7.V4.Test
             };
 
             
-            System.IO.File.WriteAllLines(testFilePath, testData);
+            File.WriteAllLines(testFilePath, testData);
 
             try
             {
@@ -40,10 +40,10 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task7.V4.Test
             }
             finally
             {
-                // Удаляем временный файл
-                if (System.IO.File.Exists(testFilePath))
+             
+                if (File.Exists(testFilePath))
                 {
-                    System.IO.File.Delete(testFilePath);
+                    File.Delete(testFilePath);
                 }
             }
         }
