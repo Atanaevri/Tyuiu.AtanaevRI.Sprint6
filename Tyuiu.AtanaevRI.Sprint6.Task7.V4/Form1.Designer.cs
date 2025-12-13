@@ -70,7 +70,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1045, 128);
+            panel1.Size = new Size(1097, 128);
             panel1.TabIndex = 0;
             // 
             // buttonHelp
@@ -78,12 +78,13 @@
             buttonHelp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonHelp.FlatStyle = FlatStyle.Flat;
             buttonHelp.Image = (Image)resources.GetObject("buttonHelp.Image");
-            buttonHelp.Location = new Point(920, 18);
+            buttonHelp.Location = new Point(972, 18);
             buttonHelp.Margin = new Padding(4, 5, 4, 5);
             buttonHelp.Name = "buttonHelp";
             buttonHelp.Size = new Size(109, 100);
             buttonHelp.TabIndex = 0;
             buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
             // 
             // buttonSave
             // 
@@ -133,7 +134,7 @@
             panel2.Location = new Point(0, 128);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1045, 135);
+            panel2.Size = new Size(1097, 135);
             panel2.TabIndex = 0;
             // 
             // groupBoxTask
@@ -144,7 +145,7 @@
             groupBoxTask.Margin = new Padding(4, 5, 4, 5);
             groupBoxTask.Name = "groupBoxTask";
             groupBoxTask.Padding = new Padding(4, 5, 4, 5);
-            groupBoxTask.Size = new Size(1045, 135);
+            groupBoxTask.Size = new Size(1097, 135);
             groupBoxTask.TabIndex = 0;
             groupBoxTask.TabStop = false;
             groupBoxTask.Text = "Условие:";
@@ -157,7 +158,7 @@
             textBoxTask.Multiline = true;
             textBoxTask.Name = "textBoxTask";
             textBoxTask.ReadOnly = true;
-            textBoxTask.Size = new Size(1037, 105);
+            textBoxTask.Size = new Size(1089, 105);
             textBoxTask.TabIndex = 0;
             textBoxTask.Text = resources.GetString("textBoxTask.Text");
             // 
@@ -166,7 +167,7 @@
             splitter1.Location = new Point(0, 263);
             splitter1.Margin = new Padding(4, 5, 4, 5);
             splitter1.Name = "splitter1";
-            splitter1.Size = new Size(4, 369);
+            splitter1.Size = new Size(4, 435);
             splitter1.TabIndex = 1;
             splitter1.TabStop = false;
             // 
@@ -177,7 +178,7 @@
             panel3.Location = new Point(4, 263);
             panel3.Margin = new Padding(4, 5, 4, 5);
             panel3.Name = "panel3";
-            panel3.Size = new Size(511, 369);
+            panel3.Size = new Size(511, 435);
             panel3.TabIndex = 2;
             // 
             // groupBoxInPut
@@ -188,13 +189,14 @@
             groupBoxInPut.Margin = new Padding(4, 5, 4, 5);
             groupBoxInPut.Name = "groupBoxInPut";
             groupBoxInPut.Padding = new Padding(4, 5, 4, 5);
-            groupBoxInPut.Size = new Size(511, 369);
+            groupBoxInPut.Size = new Size(511, 435);
             groupBoxInPut.TabIndex = 0;
             groupBoxInPut.TabStop = false;
             groupBoxInPut.Text = "Ввод:";
             // 
             // dataGridViewIn
             // 
+            dataGridViewIn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewIn.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewIn.Dock = DockStyle.Fill;
             dataGridViewIn.Location = new Point(4, 25);
@@ -202,7 +204,7 @@
             dataGridViewIn.Name = "dataGridViewIn";
             dataGridViewIn.ReadOnly = true;
             dataGridViewIn.RowHeadersWidth = 51;
-            dataGridViewIn.Size = new Size(503, 339);
+            dataGridViewIn.Size = new Size(503, 405);
             dataGridViewIn.TabIndex = 0;
             // 
             // panel4
@@ -212,7 +214,7 @@
             panel4.Location = new Point(515, 263);
             panel4.Margin = new Padding(4, 5, 4, 5);
             panel4.Name = "panel4";
-            panel4.Size = new Size(530, 369);
+            panel4.Size = new Size(582, 435);
             panel4.TabIndex = 3;
             // 
             // groupBoxOutPut
@@ -223,21 +225,23 @@
             groupBoxOutPut.Margin = new Padding(4, 5, 4, 5);
             groupBoxOutPut.Name = "groupBoxOutPut";
             groupBoxOutPut.Padding = new Padding(4, 5, 4, 5);
-            groupBoxOutPut.Size = new Size(530, 369);
+            groupBoxOutPut.Size = new Size(582, 435);
             groupBoxOutPut.TabIndex = 0;
             groupBoxOutPut.TabStop = false;
             groupBoxOutPut.Text = "Вывод:";
             // 
             // dataGridViewOut
             // 
-            dataGridViewOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewOut.AccessibleRole = AccessibleRole.OutlineButton;
+            dataGridViewOut.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewOut.ColumnHeadersHeight = 20;
             dataGridViewOut.Dock = DockStyle.Fill;
             dataGridViewOut.Location = new Point(4, 25);
             dataGridViewOut.Margin = new Padding(4, 5, 4, 5);
             dataGridViewOut.Name = "dataGridViewOut";
             dataGridViewOut.ReadOnly = true;
             dataGridViewOut.RowHeadersWidth = 51;
-            dataGridViewOut.Size = new Size(522, 339);
+            dataGridViewOut.Size = new Size(574, 405);
             dataGridViewOut.TabIndex = 0;
             // 
             // splitter2
@@ -245,7 +249,7 @@
             splitter2.Location = new Point(515, 263);
             splitter2.Margin = new Padding(4, 5, 4, 5);
             splitter2.Name = "splitter2";
-            splitter2.Size = new Size(4, 369);
+            splitter2.Size = new Size(10, 435);
             splitter2.TabIndex = 4;
             splitter2.TabStop = false;
             // 
@@ -263,7 +267,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 632);
+            ClientSize = new Size(1097, 698);
             Controls.Add(splitter2);
             Controls.Add(panel4);
             Controls.Add(panel3);

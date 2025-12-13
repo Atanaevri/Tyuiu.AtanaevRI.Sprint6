@@ -137,5 +137,12 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task7.V4
         {
             // Пусто, если не требуется дополнительной инициализации
         }
+
+       
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            Formabout formAbout = new Formabout();
+            formAbout.ShowDialog();
+        }
     }
 }
