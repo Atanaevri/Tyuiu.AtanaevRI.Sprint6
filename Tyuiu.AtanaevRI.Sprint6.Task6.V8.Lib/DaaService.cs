@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Lib
@@ -11,24 +12,31 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Lib
         {
             try
             {
-           
                 string fileContent = File.ReadAllText(path);
 
-                char[] separators = new char[]
+                
+                string[] lines = fileContent.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+    StringBuilder result = new StringBuilder();
+
+                foreach (string line in lines)
                 {
-                    ' ', ',', '.', '!', '?', ';', ':', '\t', '\n', '\r',
-                    '(', ')', '[', ']', '{', '}', '"', '\'', '-', '_'
-                };
+                    string[] words = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-                string[] words = fileContent.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-    var wordsWithZ = words
-                    .Where(word => word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0)
-                    .ToArray();
+                    foreach (string word in words)
+                    {
+                      
+                        if (word.Contains('z'))
+                        {
+                            if (result.Length > 0)
+                            {
+                                result.Append(" ");
+                            }
+                            result.Append(word);
+                        }
+                    }
+                }
 
-        
-                string result = string.Join(Environment.NewLine, wordsWithZ);
-
-                return result;
+                return result.ToString();
             }
             catch (FileNotFoundException)
             {

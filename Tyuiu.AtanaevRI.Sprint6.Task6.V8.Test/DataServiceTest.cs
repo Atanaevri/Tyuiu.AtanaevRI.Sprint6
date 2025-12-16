@@ -12,7 +12,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
         {
             string path = @"C:\Test\InPutFileTask6V8.txt";
 
-            
+          
             string[] testData = {
                 "The quick brown fox jumps over the lazy dog",
                 "Zebra is an amazing animal from Africa",
@@ -25,23 +25,21 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
             DataService ds = new DataService();
             string result = ds.CollectTextFromFile(path);
 
-        
-            string expectedWords = "lazy\r\nZebra\r\nzoo\r\npuzzle\r\ncrazy\r\nbuzz\r\nfuzzy\r\ndizzy";
+         
+            string expectedWords = "lazy puzzle crazy buzz fuzzy dizzy";
 
-          
+           
             Assert.IsTrue(result.Contains("lazy"));
-            Assert.IsTrue(result.Contains("Zebra"));
-            Assert.IsTrue(result.Contains("zoo"));
             Assert.IsTrue(result.Contains("puzzle"));
             Assert.IsTrue(result.Contains("crazy"));
             Assert.IsTrue(result.Contains("buzz"));
             Assert.IsTrue(result.Contains("fuzzy"));
             Assert.IsTrue(result.Contains("dizzy"));
 
-
-            StringAssert.Contains(result, Environment.NewLine);
-
-            File.Delete(path);
+            
+            StringAssert.Contains(result, " ");
+   if (File.Exists(path))
+                File.Delete(path);
         }
 
         [TestMethod]
@@ -62,7 +60,8 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
 
             Assert.AreEqual(string.Empty, result);
 
-            File.Delete(path);
+            if (File.Exists(path))
+                File.Delete(path);
         }
 
         [TestMethod]
@@ -84,18 +83,20 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
 
             Assert.AreEqual(string.Empty, result);
 
-            File.Delete(path);
+            if (File.Exists(path))
+                File.Delete(path);
         }
 
         [TestMethod]
-        public void CaseInsensitiveTest()
+        public void CaseSensitiveTest()
         {
             string path = @"C:\Test\CaseTest.txt";
 
+          
             string[] testData = {
-                "ZEBRA zoo ZENITH",
-                "Amazing puzzle",
-                "AZURE music"
+                "zebra Zoo ZENITH",
+                "amazing puzzle",
+                "azure music"
             };
 
             File.WriteAllLines(path, testData);
@@ -103,15 +104,17 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
             DataService ds = new DataService();
             string result = ds.CollectTextFromFile(path);
 
-            
-            Assert.IsTrue(result.Contains("ZEBRA"));
-            Assert.IsTrue(result.Contains("zoo"));
-            Assert.IsTrue(result.Contains("ZENITH"));
-            Assert.IsTrue(result.Contains("Amazing"));
+         
+            Assert.IsTrue(result.Contains("zebra"));
+            Assert.IsTrue(result.Contains("amazing"));
             Assert.IsTrue(result.Contains("puzzle"));
-            Assert.IsTrue(result.Contains("AZURE"));
+            Assert.IsTrue(result.Contains("azure"));
 
-            File.Delete(path);
+            Assert.IsFalse(result.Contains("Zoo"));
+            Assert.IsFalse(result.Contains("ZENITH"));
+
+            if (File.Exists(path))
+                File.Delete(path);
         }
 
         [TestMethod]
@@ -119,7 +122,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
         {
             string path = @"C:\Test\SpecialChars.txt";
 
-         
+   
             string[] testData = {
                 "This is (crazy) test!",
                 "Fuzzy-buzzy words...",
@@ -131,13 +134,14 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task6.V8.Test
             DataService ds = new DataService();
             string result = ds.CollectTextFromFile(path);
 
-        
             Assert.IsTrue(result.Contains("crazy"));
             Assert.IsTrue(result.Contains("Fuzzy"));
             Assert.IsTrue(result.Contains("buzzy"));
-            Assert.IsTrue(result.Contains("Zoom"));
 
-            File.Delete(path);
+            Assert.IsFalse(result.Contains("Zoom"));
+
+            if (File.Exists(path))
+                File.Delete(path);
         }
     }
 }
