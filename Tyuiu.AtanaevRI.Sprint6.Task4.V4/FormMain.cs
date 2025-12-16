@@ -23,7 +23,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task4.V4
             chartFunction_ARI.Titles.Clear();
             chartFunction_ARI.Titles.Add("График функции F(x)");
 
-            // Настройка серии
+        
             chartFunction_ARI.Series.Clear();
             var series = chartFunction_ARI.Series.Add("F(x)");
             series.ChartType = SeriesChartType.Line;
@@ -83,7 +83,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task4.V4
 
         private void buttonHelpInfo_ARI_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Спринт 6 | Таск 4 | Вариант 4 | Атанаев Р.И. РИСб-20-1" +
+            MessageBox.Show("Спринт 6 | Таск 4 | Вариант 4 | Атанаев Р.И. РППБ-25-1" +
                 Environment.NewLine +
                 "Табулирование функции: F(x) = (2x+6)/(cos(x)+x) - 3" +
                 Environment.NewLine +
