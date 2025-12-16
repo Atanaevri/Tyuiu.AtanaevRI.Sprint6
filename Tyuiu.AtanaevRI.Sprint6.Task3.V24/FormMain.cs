@@ -9,13 +9,13 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         public FormMain()
         {
             InitializeComponent();
-            InitializeDataGridView(); 
+            InitializeDataGridView();
         }
 
         DataService ds = new DataService();
         int[,] matrix = new int[5, 5]
         {
-            { -17, -6, 10, 5, 3 },      
+            { -17, -6, 10, 5, 3 },
             { -10, -14, 10, -7, -3 },
             { -19, 9, 8, -17, -9 },
             { -19, -5, -9, -18, 14 },
@@ -26,11 +26,11 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         {
             try
             {
-             
+
                 dataGridViewRes_ARI.Columns.Clear();
                 dataGridViewRes_ARI.Rows.Clear();
 
-             
+
                 for (int i = 0; i < 5; i++)
                 {
                     dataGridViewRes_ARI.Columns.Add($"Column{i}", $"Столбец {i + 1}");
@@ -45,7 +45,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                 dataGridViewRes_ARI.AllowUserToResizeRows = false;
                 dataGridViewRes_ARI.AllowUserToResizeColumns = false;
 
-              
+
                 dataGridViewRes_ARI.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridViewRes_ARI.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
@@ -72,7 +72,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                     }
                 }
 
-                
+
                 dataGridViewRes_ARI.ClearSelection();
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
         {
             try
             {
-              
+
                 int[,] resultMatrix = ds.Calculate(matrix);
 
                 for (int i = 0; i < 5; i++)
@@ -112,7 +112,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
                     }
                 }
 
-    
+
                 dataGridViewRes_ARI.ClearSelection();
             }
             catch (Exception ex)
@@ -130,7 +130,12 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task3.V24
 
         private void dataGridViewRes_ARI_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

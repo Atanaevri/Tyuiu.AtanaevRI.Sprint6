@@ -5,95 +5,40 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task4.V4.Lib
     {
         public double[] GetMassFunction(int startValue, int stopValue)
         {
-          
-                int length = Math.Abs(stopValue - startValue) + 1;
-                double[] resultArray = new double[length];
 
-                int index = 0;
-                for (int x = startValue; x <= stopValue; x++)
+            
+                int len = stopValue - startValue + 1;
+                double[] valueArray = new double[len];
+
+                for (int i = 0; i < len; i++)
                 {
+                    double x = startValue + i;
                     double denominator = Math.Cos(x) + x;
 
+               
                     if (Math.Abs(denominator) < 0.0001)
                     {
-                        resultArray[index] = 0;
+                        valueArray[i] = 0;
                     }
                     else
                     {
-                        double value = (2 * x + 6) / denominator - 3;
-                        resultArray[index] = Math.Round(value, 2);
+                        double numerator = 2 * x + 6;
+                        valueArray[i] = Math.Round(numerator / denominator - 3, 2);
                     }
-
-                    index++;
                 }
 
-                return resultArray;
+                return valueArray;
             }
 
-           
-            public string GetResultString(int startValue, int stopValue)
+            public void SaveToFileText(double[] valueArray, string path)
             {
-                double[] values = GetMassFunction(startValue, stopValue);
-                string result = "Таблица значений функции:\n";
-                result += "x\t\tF(x)\n";
-                result += "-----------------------\n";
-
-                for (int i = 0; i < values.Length; i++)
+                using (StreamWriter writer = new StreamWriter(path))
                 {
-                    int x = startValue + i;
-                    result += $"{x}\t\t{values[i]}\n";
-                }
-
-                return result;
-            }
-
-            public bool SaveToFile(string path, int startValue, int stopValue)
-            {
-                try
-                {
-                    double[] values = GetMassFunction(startValue, stopValue);
-
-                    using (StreamWriter writer = new StreamWriter(path))
+                    foreach (double value in valueArray)
                     {
-                        writer.WriteLine("Результаты табулирования функции F(x) = (2x + 6) / (cos(x) + x) - 3");
-                        writer.WriteLine($"Диапазон: [{startValue}; {stopValue}]");
-                        writer.WriteLine();
-                        writer.WriteLine("x\t\tF(x)");
-                        writer.WriteLine("-----------------------");
-
-                        for (int i = 0; i < values.Length; i++)
-                        {
-                            int x = startValue + i;
-                            writer.WriteLine($"{x}\t\t{values[i]}");
-                        }
-
-                        writer.WriteLine();
-                        writer.WriteLine($"Всего точек: {values.Length}");
+                        writer.WriteLine(value.ToString("F2"));
                     }
-
-                    return true;
                 }
-                catch
-                {
-                    return false;
-                }
-            }
-
-           
-            public Tuple<double[], double[]> GetGraphPoints(int startValue, int stopValue)
-            {
-                double[] xValues = new double[Math.Abs(stopValue - startValue) + 1];
-                double[] yValues = GetMassFunction(startValue, stopValue);
-
-                for (int i = 0; i < xValues.Length; i++)
-                {
-                    xValues[i] = startValue + i;
-                }
-
-                return Tuple.Create(xValues, yValues);
             }
         }
     }
-}
-    
-

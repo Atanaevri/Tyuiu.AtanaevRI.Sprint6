@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             labelUslovie_ARI = new Label();
             labelUslovie2_ARI = new Label();
             buttonStart_ARI = new Button();
@@ -37,7 +40,9 @@
             labelRes_ARI = new Label();
             labelConclusion_ARI = new Label();
             dataGridViewRes_ARI = new DataGridView();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRes_ARI).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // labelUslovie_ARI
@@ -110,13 +115,30 @@
             dataGridViewRes_ARI.RowHeadersWidth = 51;
             dataGridViewRes_ARI.Size = new Size(315, 335);
             dataGridViewRes_ARI.TabIndex = 7;
-            
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(897, 0);
+            chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart1.Series.Add(series2);
+            chart1.Size = new Size(375, 375);
+            chart1.TabIndex = 8;
+            chart1.Text = "chart1";
+            chart1.Click += this.chart1_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(915, 450);
+            Controls.Add(chart1);
             Controls.Add(dataGridViewRes_ARI);
             Controls.Add(labelConclusion_ARI);
             Controls.Add(labelRes_ARI);
@@ -127,7 +149,9 @@
             Controls.Add(labelUslovie_ARI);
             Name = "FormMain";
             Text = "Спринт 6 | Таск 3 | Вариант 24 | Атанаев Р.И";
+            Load += FormMain_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewRes_ARI).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +166,6 @@
         private Label labelRes_ARI;
         private Label labelConclusion_ARI;
         private DataGridView dataGridViewRes_ARI;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

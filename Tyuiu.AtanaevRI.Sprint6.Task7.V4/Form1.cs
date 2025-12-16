@@ -135,7 +135,7 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task7.V4
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // Пусто, если не требуется дополнительной инициализации
+           // 
         }
 
        
