@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.AtanaevRI.Sprint6.Task5.V23.Lib
@@ -11,32 +12,30 @@ namespace Tyuiu.AtanaevRI.Sprint6.Task5.V23.Lib
         {
             try
             {
-               
                 string[] lines = File.ReadAllLines(path)
                     .Where(line => !string.IsNullOrWhiteSpace(line))
                     .ToArray();
-
-                double[] numbers = new double[lines.Length];
+                List<double> negativeNumbers = new List<double>();
 
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string line = lines[i].Trim();
-
                     line = line.Replace('.', ',');
 
                     if (double.TryParse(line, out double number))
                     {
-                      
-                        numbers[i] = Math.Round(number, 3);
-                    }
-                    else
-                    {
-                        
-                        numbers[i] = 0;
+              
+                        double roundedNumber = Math.Round(number, 3);
+
+                   
+                        if (roundedNumber < 0)
+                        {
+                            negativeNumbers.Add(roundedNumber);
+                        }
                     }
                 }
 
-                return numbers;
+                return negativeNumbers.ToArray();
             }
             catch (FileNotFoundException)
             {
